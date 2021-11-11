@@ -1,0 +1,33 @@
+.product-form{
+    margin:30px 150px;
+}
+.product-form input {
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 400px;
+}
+.input-field{
+    height: 200px;
+}
+.error{
+    color: red;
+}
+.submit{
+    cursor: pointer;
+}
+
+  /* Make it responsive */
+  @media only screen and (max-width:688px) {
+    .product-form input{
+      width: 300px;
+    }
+  }
+  @media only screen and (min-width:689px) and (max-width: 991px){
+    .product-form input{
+      width: 350px;
+    }
+  }
+  

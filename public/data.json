@@ -1,0 +1,63 @@
+[
+    {
+    "package": "Single",
+    "features": "Bed and breakfast included",
+    "roomsize": "Single room / 20 sq.m",
+    "capacity": "One person max.",
+    "frontview": "Garden",
+    "bath": "Private bathroom with shower",
+    "price": "49",
+    "svcimg": "https://i.ibb.co/mTqwJH5/single.jpg"
+},
+{
+    "package": "Double",
+    "features": "Half Board included",
+    "roomsize": "Double room / 25 sq.m",
+    "capacity": "Two persons max.",
+    "frontview": "Garden",
+    "bath": "Private bathroom with jacuzzi",
+    "price": "69",
+    "svcimg": "https://i.ibb.co/8r0yNks/double.jpg"
+    } ,
+    {
+        "package": "Family",
+        "features": "All inclusive",
+        "roomsize": "Single room / 35 sq.m",
+        "capacity": "Four persons max.",
+        "frontview": "Sea view",
+        "bath": "Private bathroom with jacuzzi",
+        "price": "99",
+        "svcimg": "https://i.ibb.co/9Hr4fYY/family.jpg"
+        },   
+        {
+            "package": "Apartment",
+            "features": "Ultra all inclusive",
+            "roomsize": "Living room / 2 bedrooms / 60 sq.m",
+            "capacity": "Six persons max.",
+            "frontview": "Sea view",
+            "bath": "Private bathroom with jacuzzi",
+            "price":"49",
+             "svcimg": " https://i.ibb.co/gP71svX/apartment.jpg"
+            },
+            {
+                "package": "HoneMoon Lodge",
+                "features": "Ultra all inclusive",
+                "roomsize": "Living room / 2 bedrooms / 60 sq.m",
+                "capacity": "Six persons max.",
+                "frontview": "Sea view",
+                "bath": "Private bathroom with jacuzzi",
+                "price":"69",
+                 "svcimg": "https://i.ibb.co/H2RjTPX/honemoon-suits.jpg"
+                } ,
+                {
+                    "package": "House on the Water",
+                    "features": "Ultra all inclusive",
+                    "roomsize": "Living room / 2 bedrooms / 60 sq.m",
+                    "capacity": "Six persons max.",
+                    "frontview": "Sea view",
+                    "bath": "Private bathroom with jacuzzi",
+                    "price":"99",
+                     "svcimg": "https://i.ibb.co/8xFDcK0/house-on-the-water.jpg"
+                    }     
+   
+]

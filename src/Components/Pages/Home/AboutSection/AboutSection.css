@@ -1,0 +1,23 @@
+.about-section{
+    background-image: url("https://i.ibb.co/yfvxczj/IMG-2274.jpg");
+    height: 740px;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: space-around
+  }
+  
+  
+  /* Make it responsive */
+@media only screen and (max-width:688px) {
+    .about-section{
+      height: 340px;
+    }
+  }
+  @media only screen and (min-width:689px) and (max-width: 991px){
+    .about-section{
+      height: 440px;
+    }
+  }
+  
