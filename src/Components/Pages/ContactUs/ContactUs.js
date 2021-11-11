@@ -12,7 +12,7 @@ const ContactUs = () => {
 
     const onSubmit = data => {
    
-        fetch('https://mysterious-shelf-06800.herokuapp.com/contacts-info', {
+        fetch('https://x-drone.herokuapp.com/contacts-info', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

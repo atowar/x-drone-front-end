@@ -55,7 +55,7 @@ const Header = ({ fixed }) => {
                             <li className="nav-item px-3 py-2 flex items-center text-lg uppercase leading-snug">
 
                                 {
-                                    user.email ? <Link to="/my-booking">My Booking</Link>
+                                    user.email ? <Link to="/my-order">My Order</Link>
                                         :
                                         <span></span>}
 
@@ -68,7 +68,7 @@ const Header = ({ fixed }) => {
                             <li className="nav-item px-3 py-2 flex items-center text-lg uppercase leading-snug">
 
                                 {
-                                    user.email ? <Link to="/add-new-service">Add New Product</Link>
+                                    user.email ? <Link to="/add-new-product">Add New Product</Link>
                                         :
                                         <span></span>}
 

@@ -8,7 +8,7 @@ const MyOrder = () => {
     console.log(orderedProducts);
     
     useEffect(() => {
-          fetch('https://mysterious-shelf-06800.herokuapp.com/booked-services')
+          fetch('https://x-drone.herokuapp.com/ordered-products')
             .then(res => res.json())
             .then(data => setOrderedProducts(data))
         }, []);
@@ -17,7 +17,7 @@ const MyOrder = () => {
         const handleCancelOrder = id => {
             const proceed = window.confirm('Are you sure you want to Cancel Order?');
             if (proceed) {
-                const url = `https://mysterious-shelf-06800.herokuapp.com/services/${id}`;
+                const url = `https://x-drone.herokuapp.com/products/${id}`;
                 fetch(url,
                     {
                         method: "DELETE"
@@ -26,7 +26,7 @@ const MyOrder = () => {
                     .then(data => {
                         if (data.deletedCount > 0) {
                             alert('Order Cancelled');
-                            const remainingOrder = orderedProducts.filter(booking => booking._id !== id)
+                            const remainingOrder = orderedProducts.filter(order => order._id !== id)
                             setOrderedProducts(remainingOrder);
                         }
                     })
@@ -43,17 +43,17 @@ const MyOrder = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                     {
                         
-                        orderedProducts.filter(selectedService => selectedService.email === user.email).map(service => <div key={service._id} className="service mr-2">
+                        orderedProducts.filter(selectedProduct => selectedProduct.email === user.email).map(product => <div key={product._id} className="service mr-2">
 
                         <div className="grid items-center ">
                             <div className="py-5">
-                                <h2 className="underline text-4xl font-bold p-2">{service.booking.package}</h2>
-                                <p className="border-b-2 text-md font-medium p-2">{service.booking.features}</p>
-                                <p className="border-b-2 text-md font-medium p-2">{service.booking.roomsize}</p>
-                                <p className="border-b-2 text-md font-medium p-2">{service.booking.capacity}</p>
-                                <p className="border-b-2 text-md font-medium p-2">{service.booking.bath}</p>
-                                <p className="border-b-2 text-md font-medium p-2 font-bold">${service.booking.price} per night*</p>
-                                <button onClick={() => handleCancelOrder(service._id)} className="p-2 text-white">Cancel Order</button>
+                                <h2 className="underline text-4xl font-bold p-2">{product.order.package}</h2>
+                                <p className="border-b-2 text-md font-medium p-2">{product.order.features}</p>
+                                <p className="border-b-2 text-md font-medium p-2">{product.order.roomsize}</p>
+                                <p className="border-b-2 text-md font-medium p-2">{product.order.capacity}</p>
+                                <p className="border-b-2 text-md font-medium p-2">{product.order.bath}</p>
+                                <p className="border-b-2 text-md font-medium p-2 font-bold">${product.order.price} per night*</p>
+                                <button onClick={() => handleCancelOrder(product._id)} className="p-2 text-white">Cancel Order</button>
             
             
                             </div>

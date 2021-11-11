@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "beachfront-4c10e"
-  }
+    "default": "beachfront-4c10e",
+    "build": "x-drone-95e7a"
+  },
+  "targets": {}
 }

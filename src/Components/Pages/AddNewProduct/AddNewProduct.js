@@ -11,7 +11,7 @@ const AddNewProduct = () => {
 
     const onSubmit = data => {
    
-        fetch('https://mysterious-shelf-06800.herokuapp.com/services', {
+        fetch('https://x-drone.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -34,7 +34,7 @@ const AddNewProduct = () => {
             <div>
                 
                     <div className="grid justify-items-center">
-                        <h2 className="text-2xl border-b-4">Add a New Service</h2>
+                        <h2 className="text-2xl border-b-4">Add a New Product</h2>
                         <form className="product-form" onSubmit={handleSubmit(onSubmit)}>
                             
                             <input placeholder="Your Name" defaultValue={user.displayName} {...register("name")} />

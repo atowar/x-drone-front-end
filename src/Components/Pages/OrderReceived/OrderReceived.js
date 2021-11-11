@@ -14,7 +14,7 @@ const OrderReceived = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
     useEffect(() => {
-        fetch(`https://mysterious-shelf-06800.herokuapp.com/services/${serviceId}`)
+        fetch(`https://x-drone.herokuapp.com/products/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, []);
@@ -26,7 +26,7 @@ const OrderReceived = () => {
         data.status = "Pending";
         console.log(data)
 
-        fetch('https://mysterious-shelf-06800.herokuapp.com/booking', {
+        fetch('https://x-drone.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -36,7 +36,7 @@ const OrderReceived = () => {
         .then (res => res.json())
         .then (result => {
             if(result.insertedId){
-                alert('Thanks for booking')
+                alert('Thanks for your order')
                 reset();
             };
         })
