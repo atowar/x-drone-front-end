@@ -9,6 +9,7 @@ const AddNewProduct = () => {
     const {user} = useAuth()
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
+    console.log(user);
     const onSubmit = data => {
    
         fetch('https://x-drone.herokuapp.com/products', {
@@ -40,13 +41,14 @@ const AddNewProduct = () => {
                             <input placeholder="Your Name" defaultValue={user.displayName} {...register("name")} />
                             <input placeholder="Your Email" defaultValue={user.email} {...register("email", { required: true })} />
                             {errors.email && <span className="error">This field is required</span>}
-                            <input placeholder="Package Name" defaultValue="" {...register("package")} />
-                            <input placeholder="Feature" defaultValue="" {...register("features")} />
-                            <input placeholder="Room Size" defaultValue="" {...register("roomsize")} />
-                            <input placeholder="Capacity" defaultValue="" {...register("capacity")} />
-                             <input placeholder="Front View Details" defaultValue="" {...register("frontview")} />
-                             <input placeholder="Bath Facilities" defaultValue="" {...register("bath")} />
-                            <input placeholder="Price" defaultValue="" {...register("price")} />
+                            <input placeholder="Product Title" defaultValue="" {...register("produc_title")} />
+                            <input placeholder="Feature" defaultValue="" {...register("material")} />
+                            <input placeholder="Camera Lense" defaultValue="" {...register("cameralense")} />
+                            <input placeholder="Power" defaultValue="" {...register("power")} />
+                             <input placeholder="Weight" defaultValue="" {...register("weight")} />
+                             <input placeholder="Design" defaultValue="" {...register("bath")} />
+                             <input placeholder="Shipping" defaultValue="" {...register("shipping")} />
+                            <input placeholder="Phone Service" defaultValue="" {...register("phoneservice")} />
                              <input placeholder="Image Link" defaultValue="" {...register("svcimg")} />
                             
                             <input className="submit" type="submit" />

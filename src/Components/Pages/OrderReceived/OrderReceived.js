@@ -8,21 +8,21 @@ import './OrderReceived.css';
 
 const OrderReceived = () => {
 
-    const { serviceId } = useParams();
-    const [service, setService] = useState([])
+    const { orderId } = useParams();
+    const [order, setOrder] = useState([])
     const { user } = useAuth();
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
     useEffect(() => {
-        fetch(`https://x-drone.herokuapp.com/products/${serviceId}`)
+        fetch(`https://x-drone.herokuapp.com/products/${orderId}`)
             .then(res => res.json())
-            .then(data => setService(data))
+            .then(data => setOrder(data))
     }, []);
-
+console.log(user);
 
     const onSubmit = data => {
         
-        data.booking = service;
+        data.order = order;
         data.status = "Pending";
         console.log(data)
 
@@ -50,12 +50,12 @@ const OrderReceived = () => {
                     <div className="service mr-2 items-center grid justify-items-center">
                         <h2 className="text-2xl border-b-4">Your Order Details</h2>
                         <div className="py-2">
-                            <h2 className="underline text-4xl font-bold p-2">{service.package}</h2>
-                            <p className="border-b-2 text-md font-medium p-2">{service.features}</p>
-                            <p className="border-b-2 text-md font-medium p-2">{service.capacity}</p>
-                            <p className="border-b-2 text-md font-medium p-2">{service.frontview}</p>
-                            <p className="border-b-2 text-md font-medium p-2">{service.bath}</p>
-                            <p className="border-b-2 text-md font-medium p-2 font-bold">Cost: ${service.price} per night*</p>
+                            <h2 className="underline text-4xl font-bold p-2">{order.package}</h2>
+                            <p className="border-b-2 text-md font-medium p-2">{order.features}</p>
+                            <p className="border-b-2 text-md font-medium p-2">{order.capacity}</p>
+                            <p className="border-b-2 text-md font-medium p-2">{order.frontview}</p>
+                            <p className="border-b-2 text-md font-medium p-2">{order.bath}</p>
+                            <p className="border-b-2 text-md font-medium p-2 font-bold">Cost: ${order.price} per night*</p>
                         </div>
                     </div>
                     <div className="grid justify-items-center">
