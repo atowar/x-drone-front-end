@@ -5,6 +5,7 @@ import { red } from '@mui/material/colors';
 import React, { useState } from 'react';
 
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import Header from '../../Shared/Header/Header';
 
 // import login from '../../images/login.png'
 
@@ -35,59 +36,63 @@ const Signin = () => {
     }
 
     return (
-        <Container>
-            <Grid sx={{ mt: 8 }} container spacing={2}>
-                <Grid item xs={12} md={6}>
-                    <Typography variant="body1" gutterBottom>
-                        Login
-                    </Typography>
-                    <form onSubmit={handleLoginSubmit}>
-                        
-                        <TextField
-                            sx={{ width: '75%', m: 1 }}
-                            id="standard-basic"
-                            label="Your Email"
-                            name="email"
-                            onBlur={handleOnBlur}
-                            variant="standard" />
+        <div>
+            <Header></Header>
+            <Container>
+           
+           <Grid sx={{ mt: 8 }} container spacing={2}>
+               <Grid item xs={12} md={6}>
+                   <Typography variant="body1" gutterBottom>
+                       Login
+                   </Typography>
+                   <form onSubmit={handleLoginSubmit}>
+                       
+                       <TextField
+                           sx={{ width: '75%', m: 1 }}
+                           id="standard-basic"
+                           label="Your Email"
+                           name="email"
+                           onBlur={handleOnBlur}
+                           variant="standard" />
 
-                        <br />
+                       <br />
 
-                        <TextField
-                            sx={{ width: '75%', m: 1 }}
-                            id="standard-password-input"
-                            label="Password"
-                            type="password"
-                            name="password"
-                            onBlur={handleOnBlur}
-                            autoComplete="current-password"
-                            variant="standard"
-                        />
+                       <TextField
+                           sx={{ width: '75%', m: 1 }}
+                           id="standard-password-input"
+                           label="Password"
+                           type="password"
+                           name="password"
+                           onBlur={handleOnBlur}
+                           autoComplete="current-password"
+                           variant="standard"
+                       />
 
-                        <Button sx={{ width: '75%', bgcolor: 'error.main' }} type="submit" variant='contained'>Login</Button>
-                        <NavLink to="/signup"><Button
-                            style={{ textDecoration: 'none' }}
-                            variant="text">New User? Please Sign Up
-                        </Button>
+                       <Button sx={{ width: '75%', bgcolor: 'error.main' }} type="submit" variant='contained'>Login</Button>
+                       <NavLink to="/signup"><Button
+                           style={{ textDecoration: 'none' }}
+                           variant="text">New User? Please Sign Up
+                       </Button>
 
-                        </NavLink>
+                       </NavLink>
 
-                        {isLoading && <CircularProgress />}
-                        {user.email && <Alert severity="success">Successfully Registered!</Alert>}
-                        {authError && <Alert severity="error">{authError}</Alert>}
-                    </form>
-                    <Button 
-                            onClick = {handleGoogleSignIn}
-                            sx={{ bgcolor: 'error.main', width: '75%' }}
-                            style={{ textDecoration: 'none' }}
-                            variant="contained">Google Sign In
-                        </Button>
-                </Grid>
-                {/* <Grid item xs={12} md={6}>
-                    <img style={{ width: '100%' }} src={login} alt="" />
-                </Grid> */}
-            </Grid>
-        </Container>
+                       {isLoading && <CircularProgress />}
+                       {user.email && <Alert severity="success">Successfully Registered!</Alert>}
+                       {authError && <Alert severity="error">{authError}</Alert>}
+                   </form>
+                   <Button 
+                           onClick = {handleGoogleSignIn}
+                           sx={{ bgcolor: 'error.main', width: '75%' }}
+                           style={{ textDecoration: 'none' }}
+                           variant="contained">Google Sign In
+                       </Button>
+               </Grid>
+               {/* <Grid item xs={12} md={6}>
+                   <img style={{ width: '100%' }} src={login} alt="" />
+               </Grid> */}
+           </Grid>
+       </Container>
+        </div>
     );
 };
 

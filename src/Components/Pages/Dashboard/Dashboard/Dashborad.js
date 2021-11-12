@@ -15,16 +15,26 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Grid } from '@mui/material';
+import {
+    Switch,
+    Route,
+    Link,
+    useRouteMatch
+} from "react-router-dom";
+import { Button } from '@mui/material';
+import DashboardHome from '../DashboardHome/DashboardHome';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import MyOrder from '../../MyOrder/MyOrder';
-
+import ManageOrder from '../../ManageOrder/ManageOrder';
+import useAuth from '../../../../Hooks/useAuth';
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
+    const {admin} =  useAuth();
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    
+    let { path, url } = useRouteMatch();
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -33,6 +43,16 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
+            <Link to='/home'> <Button color="inherit">Home</Button></Link>
+            <Link to={`${url}`}> <Button color="inherit">Dashboard</Button></Link>
+            <Link to={`${url}/my-order`}> <Button color="inherit">My Order</Button></Link>
+           { admin &&
+            <Box>
+                 <Link to={`${url}/makeadmin`}> <Button color="inherit">Manage Admin</Button></Link>
+            <Link to={`${url}/manage-orders`}> <Button color="inherit">Manage Orders</Button></Link>
+            </Box>
+           }
+
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
@@ -121,17 +141,21 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <Typography paragraph>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} md ={12} sm={12}>
-                            <MyOrder></MyOrder>
-                        </Grid>
-                       
-                       
-                    </Grid>
-                </Typography>
 
-
+                <Switch>
+                    <Route exact path={path}>
+                        <DashboardHome></DashboardHome>
+                    </Route>
+                    <Route path={`${path}/makeadmin`}>
+                        <MakeAdmin></MakeAdmin>
+                    </Route>
+                    <Route path={`${path}/my-order`}>
+                        <MyOrder></MyOrder>
+                    </Route>
+                    <Route path={`${path}/manage-orders`}>
+                        <ManageOrder></ManageOrder>
+                    </Route>
+                </Switch>
             </Box>
         </Box>
     );

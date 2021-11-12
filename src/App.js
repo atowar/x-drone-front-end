@@ -45,16 +45,10 @@ function App() {
             <Route path="/signup">
               <SignUp></SignUp>
             </Route>
-            <PrivateRoute path="/manage-order">
-              <ManageOrder></ManageOrder>
-            </PrivateRoute>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
-            <Route path="/my-order">
-              <MyOrder></MyOrder>
-            </Route>
-         
+                    
             <Route path="/about-us">
               <AboutUs></AboutUs>
             </Route>

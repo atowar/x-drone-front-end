@@ -2,6 +2,7 @@ import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography
 import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import Header from '../../Shared/Header/Header';
 
 // import login from '../../../images/login.png'
 
@@ -32,7 +33,10 @@ const SignUp = () => {
         e.preventDefault()
     }
     return (
+        <div>
+            <Header></Header>
         <Container>
+            
             <Grid sx={{ mt: 8 }} container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>
@@ -104,6 +108,7 @@ const SignUp = () => {
                 </Grid> */}
             </Grid>
         </Container>
+        </div>
     );
 };
 

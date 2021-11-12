@@ -9,6 +9,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState();
+    const [admin, setAdmin] = useState(false);
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -17,30 +18,30 @@ const useFirebase = () => {
         // email password register
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                      
+
                 setAuthError('')
-                const newUser = {email, displayName: name};
-              
+                const newUser = { email, displayName: name };
+
                 setUser(newUser);
 
                 // save user to db
-                saveUserToDb(email, name)
-                  //send name to firebaes 
-               
-                  updateProfile(auth.currentUser, {
+                saveUserToDb(email, name, 'POST')
+                //send name to firebaes 
+
+                updateProfile(auth.currentUser, {
                     displayName: name
-                  }).then(() => {
-                    
-                  }).catch((error) => {
-                  
-                  });
-               
-                  history.replace('/')
+                }).then(() => {
+
+                }).catch((error) => {
+
+                });
+
+                history.replace('/')
             })
             .catch((error) => {
-               
+
                 setAuthError(error.message)
-              
+
             })
             .finally(() => setIsLoading(false));
     }
@@ -53,11 +54,11 @@ const useFirebase = () => {
             .then((userCredential) => {
                 const destination = location?.state?.from || '/'
                 history.replace(destination)
-               
+
                 setAuthError('')
             })
             .catch((error) => {
-              
+
                 setAuthError(error.message);
             })
             .finally(() => setIsLoading(false));
@@ -67,17 +68,20 @@ const useFirebase = () => {
 
 
     const googleSignIn = (location, history) => {
-       
+
         setIsLoading(true);
 
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-            
+                const user = result.user;
+                const destination = location?.state?.from || '/'
+                history.replace(destination)
+                saveUserToDb(user.email, user.displayName, 'PUT')
                 setAuthError('')
             }).catch((error) => {
-             
+
                 setAuthError(error.message);
-           
+
             })
             .finally(() => setIsLoading(false));;
 
@@ -90,7 +94,7 @@ const useFirebase = () => {
             if (user) {
 
                 setUser(user)
-                
+
 
             } else {
                 setUser({})
@@ -100,6 +104,12 @@ const useFirebase = () => {
         return () => unsubscribe;
 
     }, [])
+
+    useEffect(() => {
+        fetch(`https://x-drone.herokuapp.com/users/${user.email}`)
+        .then( res => res.json())
+        .then (data => setAdmin(data.admin))
+    }, [user.email])
 
     // log out 
 
@@ -113,28 +123,27 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const saveUserToDb= (email, displayName) => {
-        const user = {email, displayName};
-        fetch ('https://x-drone.herokuapp.com/users', {
-            method: "POST",
+    const saveUserToDb = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('https://x-drone.herokuapp.com/users', {
+            method: method,
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(user)
         })
-        .then()
+            .then()
     }
 
     return {
         user,
+        admin,
         isLoading,
         authError,
         registerUser,
         loginUser,
         googleSignIn,
         logout,
-
-
     }
 }
 
