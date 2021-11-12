@@ -23,7 +23,7 @@ const SignUp = () => {
         setLoginData(newLoginData);
     }
     const handleLoginSubmit = e => {
-        alert('Clicked')
+        
         if (loginData.password !== loginData.password_confirm) {
             alert('Your password did not match')
             return
@@ -83,8 +83,8 @@ const SignUp = () => {
                                 variant="standard"
                             />
 
-                            <Button sx={{ width: '75%' }} type="submit" variant='contained'>Register</Button>
-                            <NavLink to="/signin"><Button
+                            <Button sx={{ bgcolor: 'error.main', width: '75%' }} type="submit" variant='contained'>Register</Button>
+                            <NavLink to="/signin"><Button 
                                 style={{ textDecoration: 'none' }}
                                 variant="text">Already Registered? Please SignIn
                             </Button>

@@ -1,6 +1,7 @@
 import useAuth from '../../../Hooks/useAuth';
 
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
+import { red } from '@mui/material/colors';
 import React, { useState } from 'react';
 
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
@@ -63,7 +64,7 @@ const Signin = () => {
                             variant="standard"
                         />
 
-                        <Button sx={{ width: '75%' }} type="submit" variant='contained'>Login</Button>
+                        <Button sx={{ width: '75%', bgcolor: 'error.main' }} type="submit" variant='contained'>Login</Button>
                         <NavLink to="/signup"><Button
                             style={{ textDecoration: 'none' }}
                             variant="text">New User? Please Sign Up
@@ -77,7 +78,7 @@ const Signin = () => {
                     </form>
                     <Button 
                             onClick = {handleGoogleSignIn}
-                            sx={{ width: '75%' }}
+                            sx={{ bgcolor: 'error.main', width: '75%' }}
                             style={{ textDecoration: 'none' }}
                             variant="contained">Google Sign In
                         </Button>

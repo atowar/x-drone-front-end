@@ -37,11 +37,7 @@ const AddNewProduct = () => {
                     <div className="grid justify-items-center">
                         <h2 className="text-2xl border-b-4">Add a New Product</h2>
                         <form className="product-form" onSubmit={handleSubmit(onSubmit)}>
-                            
-                            <input placeholder="Your Name" defaultValue={user.displayName} {...register("name")} />
-                            <input placeholder="Your Email" defaultValue={user.email} {...register("email", { required: true })} />
-                            {errors.email && <span className="error">This field is required</span>}
-                            <input placeholder="Product Title" defaultValue="" {...register("produc_title")} />
+                            <input placeholder="Product Title" defaultValue="" {...register("title")} />
                             <input placeholder="Feature" defaultValue="" {...register("material")} />
                             <input placeholder="Camera Lense" defaultValue="" {...register("cameralense")} />
                             <input placeholder="Power" defaultValue="" {...register("power")} />
@@ -49,8 +45,9 @@ const AddNewProduct = () => {
                              <input placeholder="Design" defaultValue="" {...register("bath")} />
                              <input placeholder="Shipping" defaultValue="" {...register("shipping")} />
                             <input placeholder="Phone Service" defaultValue="" {...register("phoneservice")} />
+                            <input placeholder="Price" defaultValue="" {...register("price")} />
                              <input placeholder="Image Link" defaultValue="" {...register("svcimg")} />
-                            
+                                                                            
                             <input className="submit" type="submit" />
                         </form>
 

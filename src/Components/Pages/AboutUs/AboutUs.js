@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../../Shared/Header/Header';
 import './AboutUs.css'
 
 // https://i.ibb.co/9NFbj3s/MG-6995.jpg
@@ -8,7 +9,9 @@ import './AboutUs.css'
 // https://i.ibb.co/0Mn5hGG/MG-7148.jpg
 const AboutUs = () => {
     return (
+        
         <div>
+            <Header></Header>
 
             <div className="about-title">
                 <h2 className="pt-5 text-2xl md:text-5xl text-white">About BeachFront</h2>

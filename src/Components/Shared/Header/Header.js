@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../images/logo/logo.png';
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +13,7 @@ const Header = ({ fixed }) => {
 
     return (
         <>
-            <nav className="border-b-2 relative fixed-top flex flex-wrap items-center justify-between px-2 py-3 mb-3">
+            <nav className="text-base border-b-2 relative fixed-top flex flex-wrap items-center justify-between px-2 py-3 mb-3">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                         <NavLink to="/home"> <img style={{ width: "250px" }} src={logo} alt="site logo" /></NavLink>
@@ -36,36 +36,39 @@ const Header = ({ fixed }) => {
                         id="example-navbar-danger"
                     >
                         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-                            <li className="nav-item px-3 py-2 flex items-center text-lg uppercase leading-snug">
+                            <li className="nav-item px-3 py-2 flex items-center leading-snug uppercase">
 
                                 <NavLink to="/home">Home</NavLink>
 
                             </li>
-                            <li className="nav-item px-3 py-2 flex items-center text-lg uppercase leading-snug">
+                            <li className="nav-item px-3 py-2 flex items-center  leading-snug uppercase">
+
+                                <NavLink to="/explore-products">Explore Products</NavLink>
+
+                            </li>
+                            <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
 
                                 <NavLink to="/about-us">About us</NavLink>
 
                             </li>
 
-                            <li className="nav-item px-3 py-2 flex items-center text-lg uppercase leading-snug">
+                            <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
 
                                 <Link to="/contact-us">Contact us</Link>
 
                             </li>
-                            <li className="nav-item px-3 py-2 flex items-center text-lg uppercase leading-snug">
+
+                        
+                            <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
 
                                 {
-                                    user.email ? <Link to="/my-order">My Order</Link>
-                                        :
-                                        <span></span>}
+                                    user?.email? <Link to="/manage-order">Manage Orders</Link>
+                                    :
+                                    <span></span>
+                                }
 
                             </li>
-                            <li className="nav-item px-3 py-2 flex items-center text-lg uppercase leading-snug">
-
-                                <Link to="/manage-product">Manage Products</Link>
-
-                            </li>
-                            <li className="nav-item px-3 py-2 flex items-center text-lg uppercase leading-snug">
+                            <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
 
                                 {
                                     user.email ? <Link to="/add-new-product">Add New Product</Link>
@@ -73,13 +76,20 @@ const Header = ({ fixed }) => {
                                         <span></span>}
 
                             </li>
+                            <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
 
-                            <li className="nav-item px-3 py-2 flex items-center text-lg uppercase leading-snug">
+{
+    user?.email ? <Link to="/dashboard">Dashboard</Link>
+        :
+        <span></span>}
+
+</li>
+                            <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
 
                                 <span className="italic">{user.displayName}</span>
 
                             </li>
-                            <li className="nav-item px-3 py-2 flex items-center text-lg uppercase leading-snug">
+                            <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
 
                                 {
                                     user.email ? <button className="py-2 px-5 text-white" onClick={logout}>Sign-Out</button>

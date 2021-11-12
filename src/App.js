@@ -13,9 +13,11 @@ import SignUp from './Components/Pages/SignUp/SignUp';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Footer from './Components/Shared/Footer/Footer';
 import FooterBottom from './Components/Shared/FooterBottom/FooterBottom';
-import Header from './Components/Shared/Header/Header';
 import AuthProvider from './Context/AuthProvider';
 import ManageOrder from './Components/Pages/ManageOrder/ManageOrder';
+import ExploreProducts from './Components/Pages/Home/ExploreProducts/ExploreProducts';
+import Dashboard from './Components/Pages/Dashboard/Dashboard/Dashborad';
+
 
 
 function App() {
@@ -23,13 +25,16 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
-          <Header></Header>
+   
           <Switch>
             <Route exact path="/">
               <Home></Home>
             </Route>
             <Route path="/home">
               <Home></Home>
+            </Route>
+            <Route path="/explore-products">
+              <ExploreProducts></ExploreProducts>
             </Route>
             <PrivateRoute path="/order-received/:orderId">
               <OrderReceived></OrderReceived>
@@ -42,6 +47,9 @@ function App() {
             </Route>
             <PrivateRoute path="/manage-order">
               <ManageOrder></ManageOrder>
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
             </PrivateRoute>
             <Route path="/my-order">
               <MyOrder></MyOrder>

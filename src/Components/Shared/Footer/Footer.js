@@ -10,11 +10,11 @@ const Footer = () => {
                 <div>
                     <img className="w-3/5" src={logo} alt="" />
                     <p className="mt-2">Hello: +880178921457</p>
-                    <p>Cox's Bazar, Bangladesh</p>
+                    <p>Mipurpur Shah Ali Tower, Dhaka, Bangladesh</p>
                 </div>
                 <div>
-                    <h2 className="text-xl font-bold py-2">About BeachFront</h2>
-                    <p>Encompassing the spectacular views of Cox’s Bazar, BeachFront Resort stands very close to the hills and sea-beach, offering world class facilities and exhilarating experience to its guests.</p>
+                    <h2 className="text-xl font-bold py-2">About X-Drone</h2>
+                    <p>X-Drone is first drone importer in Bangladesh. You will get varities of Drone here at reasonable price</p>
                 </div>
                 <div>
                     <h2 className="text-xl font-bold py-2">Usefull Links</h2>

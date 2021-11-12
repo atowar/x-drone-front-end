@@ -17,16 +17,18 @@ const useFirebase = () => {
         // email password register
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in 
-               
+                      
                 setAuthError('')
                 const newUser = {email, displayName: name};
               
                 setUser(newUser);
-                  //send name to firebaes after creation
+
+                // save user to db
+                saveUserToDb(email, name)
+                  //send name to firebaes 
                
                   updateProfile(auth.currentUser, {
-                    displayName: {name}
+                    displayName: name
                   }).then(() => {
                     
                   }).catch((error) => {
@@ -36,9 +38,9 @@ const useFirebase = () => {
                   history.replace('/')
             })
             .catch((error) => {
-                // const errorCode = error.code;
+               
                 setAuthError(error.message)
-                // ..
+              
             })
             .finally(() => setIsLoading(false));
     }
@@ -109,6 +111,18 @@ const useFirebase = () => {
             // An error happened.
         })
             .finally(() => setIsLoading(false));
+    }
+
+    const saveUserToDb= (email, displayName) => {
+        const user = {email, displayName};
+        fetch ('https://x-drone.herokuapp.com/users', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then()
     }
 
     return {

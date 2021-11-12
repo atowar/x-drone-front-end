@@ -57,7 +57,7 @@ const ManageOrder = () => {
         }
     }
     return (
-        <div className="my-5 py-5 services-container grid justify-items-center">
+        <div className="my-5 py-5 grid justify-items-center">
             <div id="services" className="md:w-8/12 grid">
 
                 <h2 className="underline p-5 text-2xl md:text-5xl my-5">MANAGE<span className="font-bold"> ORDER</span> </h2>
@@ -65,14 +65,14 @@ const ManageOrder = () => {
                     <div className="grid gap-4">
                         {
                             orderedProducts.map(product =>
-                                <div key = {product._id} className="service mr-2">
+                                <div key = {product._id} className="mr-2">
 
                                     <table class="table-auto md:w-full">
 
                                         <thead>
                                             <tr className="border-b-2 text-md">
-                                                <th className="w-3/12 text-left p-">Package Name: {product.order.package}</th>
-                                                <th className="w-2/12 text-left">Price: ${product.order.price} per night*</th>
+                                                <th className="w-3/12 text-left p-">Product Name: {product.order.title}</th>
+                                                <th className="w-2/12 text-left">Price: ${product.order.price}</th>
                                                 <th className="w-2/12 text-left">Ordered By: <span className="italic text-gray-400">{product.name}</span></th>
                                                 <th className="w-2/12 text-left">{product.status}</th>
                                                 <th className="w-1/12 text-left"><button onClick={() => handleUpdateOrder(product._id)} className="bg-red text-white p-1 font-bold border">Update</button></th>

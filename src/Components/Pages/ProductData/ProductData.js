@@ -34,8 +34,8 @@ const ProductData = ({ product }) => {
 
                 <thead>
                     <tr className="border-b-2 text-md">
-                        <th className="w-1/3 text-left p-">Package Name: {product.order.package}</th>
-                        <th className="w-1/3 text-left">Price: ${product.order.price} per night*</th>
+                        <th className="w-1/3 text-left p-">Product Name: {product.order.title}</th>
+                        <th className="w-1/3 text-left">Price: ${product.order.price}</th>
                         <th className="w-1/3 text-left">Ordered By: <span className="italic text-gray-400">{product.name}</span></th>
                         <th className="w-1/3 text-left"><button onClick={() => handleDeleteProduct(product._id)} className="bg-white font-bold border">X</button></th>
                     </tr>

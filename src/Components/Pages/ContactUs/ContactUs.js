@@ -3,6 +3,7 @@ import './ContactUs.css'
 
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../Hooks/useAuth';
+import Header from '../../Shared/Header/Header';
 
 
 
@@ -31,7 +32,10 @@ const ContactUs = () => {
 
 
     return (
-        <div className="grid justify-items-center">
+        <div>
+            <Header></Header>
+            <div className="grid justify-items-center">
+                   
             <div>
                 
                     <div className="grid justify-items-center">
@@ -54,6 +58,31 @@ const ContactUs = () => {
                 </div>
             </div>
        
+            <div className="grid justify-items-center">
+                   
+                   <div>
+                       
+                           <div className="grid justify-items-center">
+                               <h2 className="text-2xl border-b-4">Have a Questions? Send us a message.</h2>
+                               <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+                                   
+                                   <input placeholder="Your Name" defaultValue={user.displayName} {...register("name")} />
+       
+                                   <input placeholder="Your Email" defaultValue={user.email} {...register("email", { required: true })} />
+                                   {errors.email && <span className="error">This field is required</span>}
+                                   <input placeholder="Address" defaultValue="" {...register("address")} />
+                                    <input placeholder="City" defaultValue="" {...register("city")} />
+                                   <input placeholder="phone number" defaultValue="" {...register("phone")} />
+                                   <input className="input-field" placeholder="Your Message" defaultValue="" {...register("message")} />
+       
+                                   <input className="submit" type="submit" />
+                               </form>
+       
+                           </div>
+                       </div>
+                   </div>
+              
+        </div>
     );
 };
 export default ContactUs;

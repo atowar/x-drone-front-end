@@ -38,7 +38,7 @@ const MyOrder = () => {
         <div className="my-5 py-5 services-container grid justify-items-center">
         <div id="services" className="md:w-8/12 grid justify-items-stretch">
              
-            <h2 className="underline p-5 text-2xl md:text-5xl">Hello, {user.displayName} here is your<span className="font-bold"> Order Details</span> </h2>
+            <h2 className="underline p-5 text-xl md:text-xl"> Order Details</h2>
             <div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                     {
@@ -47,14 +47,15 @@ const MyOrder = () => {
 
                         <div className="grid items-center ">
                             <div className="py-5">
-                                <h2 className="underline text-4xl font-bold p-2">{product.order.package}</h2>
-                                <p className="border-b-2 text-md font-medium p-2">{product.order.features}</p>
-                                <p className="border-b-2 text-md font-medium p-2">{product.order.roomsize}</p>
-                                <p className="border-b-2 text-md font-medium p-2">{product.order.capacity}</p>
-                                <p className="border-b-2 text-md font-medium p-2">{product.order.bath}</p>
+                                <h2 className="underline text-4xl font-bold p-2">{product.order.title}</h2>
+                                <p className="border-b-2 text-md font-medium p-2">{product.order.material}</p>
+                                <p className="border-b-2 text-md font-medium p-2">{product.order.cameralense}</p>
+                                <p className="border-b-2 text-md font-medium p-2">{product.order.power}</p>
+                                <p className="border-b-2 text-md font-medium p-2">{product.order.weight}</p>
+                                <p className="border-b-2 text-md font-medium p-2">{product.order.shipping}</p>
+                                <p className="border-b-2 text-md font-medium p-2">{product.order.phoneservice}</p>
                                 <p className="border-b-2 text-md font-medium p-2 font-bold">${product.order.price} per night*</p>
                                 <button onClick={() => handleCancelOrder(product._id)} className="p-2 text-white">Cancel Order</button>
-            
             
                             </div>
                         </div>

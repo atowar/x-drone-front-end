@@ -8,11 +8,14 @@ import ResortFacilites from './ResortFacilites/ResortFacilites';
 import AboutSection from './AboutSection/AboutSection';
 import PromoBottom from './PromoBottom/PromoBottom';
 import Products from './Products/Products';
+import Header from '../../Shared/Header/Header';
+
 
 
 const Home = () => {
     return (
         <div>
+            <Header></Header>
             <NavbarSlider></NavbarSlider>
             <ResortServices></ResortServices>
             <PromoBanner></PromoBanner>
