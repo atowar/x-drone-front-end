@@ -58,32 +58,14 @@ const Header = ({ fixed }) => {
 
                             </li>
 
-                        
                             <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
 
                                 {
-                                    user?.email? <Link to="/manage-order">Manage Orders</Link>
-                                    :
-                                    <span></span>
-                                }
-
-                            </li>
-                            <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
-
-                                {
-                                    user.email ? <Link to="/add-new-product">Add New Product</Link>
+                                    user?.email ? <Link to="/dashboard">Dashboard</Link>
                                         :
                                         <span></span>}
 
                             </li>
-                            <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
-
-{
-    user?.email ? <Link to="/dashboard">Dashboard</Link>
-        :
-        <span></span>}
-
-</li>
                             <li className="nav-item px-3 py-2 flex items-center uppercase leading-snug">
 
                                 <span className="italic">{user.displayName}</span>

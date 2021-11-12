@@ -27,11 +27,12 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import MyOrder from '../../MyOrder/MyOrder';
 import ManageOrder from '../../ManageOrder/ManageOrder';
 import useAuth from '../../../../Hooks/useAuth';
+import AdminRoute from '../../Signin/AdminRoute/AdminRoute';
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
-    const {admin} =  useAuth();
+    const {user, admin, logout } = useAuth();
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     let { path, url } = useRouteMatch();
@@ -46,12 +47,16 @@ function Dashboard(props) {
             <Link to='/home'> <Button color="inherit">Home</Button></Link>
             <Link to={`${url}`}> <Button color="inherit">Dashboard</Button></Link>
             <Link to={`${url}/my-order`}> <Button color="inherit">My Order</Button></Link>
-           { admin &&
-            <Box>
-                 <Link to={`${url}/makeadmin`}> <Button color="inherit">Manage Admin</Button></Link>
-            <Link to={`${url}/manage-orders`}> <Button color="inherit">Manage Orders</Button></Link>
-            </Box>
-           }
+
+            {admin &&
+                <Box>
+                    <Link to={`${url}/makeadmin`}> <Button color="inherit">Manage Admin</Button></Link>
+                    <Link to={`${url}/manage-orders`}> <Button color="inherit">Manage Orders</Button></Link>
+                </Box>
+            }
+            {user && <Button onClick={logout} color="inherit">Sign-out</Button>
+  
+             }
 
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -146,15 +151,16 @@ function Dashboard(props) {
                     <Route exact path={path}>
                         <DashboardHome></DashboardHome>
                     </Route>
-                    <Route path={`${path}/makeadmin`}>
-                        <MakeAdmin></MakeAdmin>
-                    </Route>
+                    
                     <Route path={`${path}/my-order`}>
                         <MyOrder></MyOrder>
                     </Route>
-                    <Route path={`${path}/manage-orders`}>
+                    <AdminRoute path={`${path}/makeadmin`}>
+                        <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manage-orders`}>
                         <ManageOrder></ManageOrder>
-                    </Route>
+                    </AdminRoute>
                 </Switch>
             </Box>
         </Box>
