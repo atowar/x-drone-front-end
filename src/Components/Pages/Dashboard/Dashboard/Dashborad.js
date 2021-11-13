@@ -25,6 +25,8 @@ import useAuth from '../../../../Hooks/useAuth';
 import AdminRoute from '../../Signin/AdminRoute/AdminRoute';
 import Pay from './Pay/Pay';
 import Review from '../Review/Review';
+import ManageProducts from '../ManageProducts/ManageProducts';
+import AddNewProduct from '../../AddNewProduct/AddNewProduct';
 
 
 const drawerWidth = 200;
@@ -54,6 +56,7 @@ function Dashboard(props) {
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                     <Link to={`${url}/makeadmin`}> <Button color="inherit">Manage Admin</Button></Link>
                     <Link to={`${url}/manage-orders`}> <Button color="inherit">Manage Orders</Button></Link>
+                    <Link to={`${url}/add-product`}> <Button color="inherit">Add Product</Button></Link>
                     <Link to={`${url}/manage-products`}> <Button color="inherit">Manage Products</Button></Link>
                 </Box>
             }
@@ -153,8 +156,11 @@ function Dashboard(props) {
                     <AdminRoute path={`${path}/manage-orders`}>
                         <ManageOrder></ManageOrder>
                     </AdminRoute>
+                    <AdminRoute path={`${path}/add-product`}>
+                        <AddNewProduct></AddNewProduct>
+                    </AdminRoute>
                     <AdminRoute path={`${path}/manage-products`}>
-                        <ManageOrder></ManageOrder>
+                        <ManageProducts></ManageProducts>
                     </AdminRoute>
                 </Switch>
             </Box>

@@ -2,10 +2,8 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AboutUs from './Components/Pages/AboutUs/AboutUs';
-import AddNewProduct from './Components/Pages/AddNewProduct/AddNewProduct';
 import ContactUs from './Components/Pages/ContactUs/ContactUs';
 import Home from './Components/Pages/Home/Home';
-import MyOrder from './Components/Pages/MyOrder/MyOrder';
 import NotFound from './Components/Pages/NotFound/NotFound';
 import OrderReceived from './Components/Pages/OrderReceived/OrderReceived';
 import Signin from './Components/Pages/Signin/Signin';
@@ -14,7 +12,6 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Footer from './Components/Shared/Footer/Footer';
 import FooterBottom from './Components/Shared/FooterBottom/FooterBottom';
 import AuthProvider from './Context/AuthProvider';
-import ManageOrder from './Components/Pages/ManageOrder/ManageOrder';
 import ExploreProducts from './Components/Pages/Home/ExploreProducts/ExploreProducts';
 import Dashboard from './Components/Pages/Dashboard/Dashboard/Dashborad';
 
@@ -55,10 +52,7 @@ function App() {
             <Route path="/contact-us">
               <ContactUs></ContactUs>
             </Route>
-            <PrivateRoute path="/add-new-product">
-              <AddNewProduct></AddNewProduct>
-            </PrivateRoute>
-          
+                
             <Route path="*">
               <NotFound></NotFound>
             </Route>
