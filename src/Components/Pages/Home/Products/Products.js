@@ -8,7 +8,7 @@ const Products = () => {
     const [products] = setProducts();
   
     return (
-        <div className="my-5 py-5 products-container grid justify-items-center">
+        <div className="my-5 py-5 grid justify-items-center">
         <div className="md:w-8/12 grid justify-items-stretch">
              <h2 className="pt-5 text-xl">We offer Varities Range of  Drones</h2>
             <h2 className="p-5 text-2xl md:text-5xl"><span className="underline font-bold">ORDER</span> ONE YOU LIKE</h2>

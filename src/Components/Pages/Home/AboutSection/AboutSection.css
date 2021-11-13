@@ -1,5 +1,5 @@
 .about-section{
-    background-image: url("https://i.ibb.co/yfvxczj/IMG-2274.jpg");
+    background-image: url("https://i.ibb.co/GWLBqZc/drone.png");
     height: 740px;
     background-position: center;
     background-attachment: fixed;
@@ -8,8 +8,7 @@
     align-content: space-around
   }
   
-  
-  /* Make it responsive */
+    /* Make it responsive */
 @media only screen and (max-width:688px) {
     .about-section{
       height: 340px;

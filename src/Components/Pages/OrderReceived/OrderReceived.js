@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import useAuth from '../../../Hooks/useAuth';
 import { useForm } from 'react-hook-form';
+import Header from '../../Shared/Header/Header';
 import './OrderReceived.css';
 
 
@@ -42,7 +43,9 @@ const OrderReceived = () => {
     };
 
     return (
-        <div className="grid justify-items-center">
+        <>
+            <Header/>
+            <div className="grid justify-items-center">
             <div className="md:w-8/12">
                 <div className="grid md:grid-cols-2 gap-4">
 
@@ -79,6 +82,7 @@ const OrderReceived = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

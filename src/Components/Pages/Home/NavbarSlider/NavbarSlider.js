@@ -6,10 +6,12 @@ import Title from "./Title";
 import Subtitle from "./Subtitle";
 
 // Images
-const kyoto = "https://i.ibb.co/LNfMhS8/slide2.jpg";
-const tenryuJiTemple = "https://i.imgur.com/g5JNdYL.jpg";
-const hakone = "https://i.imgur.com/Iq6XtFR.jpg";
-const byodoInTemple = "https://i.ibb.co/bd6k3yf/slide1.jpg";
+const drone1 = "https://i.ibb.co/pzVpjxf/slider-1.png";
+const drone2 = "https://i.ibb.co/FbN6McX/slider-4.png";
+const drone3 = "https://i.ibb.co/KhJmzD1/slider-2.png";
+const drone4 = "https://i.ibb.co/YQvTMKJ/slider-3.png";
+
+
 
 const NavbarSlider = () => {
     return (
@@ -38,44 +40,44 @@ const NavbarSlider = () => {
               
                 <OverlayContainer>
                     <Wrapper>
-                        <Title>Welcome to BeachFront, Cox's Bazar</Title>
-                        <Subtitle>A Heart Throbbing Experience at Cox’s Bazar</Subtitle>
+                        <Title>Welcome to X-Drone Store</Title>
+                        <Subtitle>You must love our drones!</Subtitle>
                     </Wrapper>
                 </OverlayContainer>
 
                 <Slide
                     shouldRenderMask
-                    navDescription="Coxs' Bazer Beach"
+                    navDescription="Drone-1"
                     background={{
                         backgroundColor: "#6D9B98",
-                        backgroundImage: kyoto
+                        backgroundImage: drone2
                     }}
                 />
 
                 <Slide
                     shouldRenderMask
-                    navDescription="Cox's Bazar"
+                    navDescription="Drone-2"
                     background={{
                         backgroundColor: "#8A8A8A",
-                        backgroundImage: tenryuJiTemple
+                        backgroundImage: drone1
                     }}
                 />
 
                 <Slide
                     shouldRenderMask
-                    navDescription="Sylhet"
+                    navDescription="Drone-3"
                     background={{
                         backgroundColor: "#EA2329",
-                        backgroundImage: hakone
+                        backgroundImage: drone3
                     }}
                 />
 
                 <Slide
                     shouldRenderMask
-                    navDescription="Coxs' Bazar Beach Front"
+                    navDescription="Drone-4"
                     background={{
                         backgroundColor: "#2D7791",
-                        backgroundImage: byodoInTemple
+                        backgroundImage: drone4
                     }}
                 />
 
