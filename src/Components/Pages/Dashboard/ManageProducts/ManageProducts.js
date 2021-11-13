@@ -24,7 +24,8 @@ const ManageProducts = () => {
                 })
                 .then(res => res.json())
                 .then(data => {
-                    if (data.deletedCount > 0) {
+                    
+                    if (data.deletedCount) {
                         alert('Product Deleted');
                         const remainingProducts = products.filter(product => product._id !== id)
                         setProducts(remainingProducts);
@@ -55,7 +56,7 @@ const ManageProducts = () => {
                                             <th className="w-3/12 text-left p-">Product Name: {product.title}</th>
                                             <th className="w-2/12 text-left">Price: ${product.price}</th>
                                             
-                                            <th className="w-2/12 text-left"><button onClick={() => handleDeleteProduct(product._id)} className="p-2 text-white">Cancel Order</button></th>
+                                            <th className="w-2/12 text-left"><button onClick={() => handleDeleteProduct(product._id)} className="p-2 text-white">Delete Product</button></th>
                                         </tr>
                                     </thead>
                                 </table>

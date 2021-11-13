@@ -1,17 +1,17 @@
-# BeachFront
+# X-Drone
 
-Visit My Website [BeachFront](https://beachfront-4c10e.web.app/).
+Visit My Website [X-Drone](https://x-drone-95e7a.web.app/).
 
 
 ### What you will get? ###   
  
-* You can book any of our service
+* You can purchase drone from us
 
-* After you logged in you will be able to see your all orders
+* After you logged as a general user in you will be able to see your dashboard and you will get all order details
 
-* You will be able to cancel order
+* After logged in General user can be able to pay, manage My Orders, Review, Logout
 
-* Logged in user can manage order and delete or change order status.
+* After logged in Admin user can be able to Manage All Orders, Add A Product, Make Admin to any user , Logout
 
 * Admin can add new services and automatically them will  be displayed in front end
 
@@ -21,7 +21,7 @@ Visit My Website [BeachFront](https://beachfront-4c10e.web.app/).
  
 * Built with react js
 
-* Used tailwind css
+* Used tailwind css and material ui
 
 * Used fontawesome
 
@@ -32,6 +32,8 @@ Visit My Website [BeachFront](https://beachfront-4c10e.web.app/).
 * Used context api
 
 * Used google sign in
+
+* Custom sign up using email and password
 
 
 
