@@ -46,8 +46,8 @@ const Review = () => {
                             <input defaultValue={user.displayName} {...register("name")} />
                             <input defaultValue={user.email} {...register("email", { required: true })} />
                             {errors.email && <span className="error">This field is required</span>}
-                            <input className="input-field" placeholder="Rate us out of 5" defaultValue="" {...register("star")} />
-                            <input className="input-field" placeholder="Your Reviews" defaultValue="" {...register("message")} />
+                            <input className="star-field" placeholder="Rate us out of 5" defaultValue="" {...register("star")} />
+                            <input className="input-field" placeholder="Your Comment" defaultValue="" {...register("message")} />
                             <input className="submit" type="submit" />
                         </form>
 

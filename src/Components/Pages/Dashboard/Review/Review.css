@@ -1,6 +1,14 @@
 .review-received-form{
     margin:30px 150px;
 }
+.star-received-form input {
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 20px;
+}
 .review-received-form input {
     display: block;
     margin-top: 30px;
