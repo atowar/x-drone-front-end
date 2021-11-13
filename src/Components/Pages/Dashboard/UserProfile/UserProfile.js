@@ -4,7 +4,7 @@ import useAuth from '../../../../Hooks/useAuth';
 
 
 const UserProfile = () => {
-    const { user } = useAuth()
+    const { user } = useAuth();
     const [orderedProducts, setOrderedProducts] = useState([]);
 
 

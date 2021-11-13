@@ -2,11 +2,6 @@ import React from 'react';
 import Header from '../../Shared/Header/Header';
 import './AboutUs.css'
 
-// https://i.ibb.co/9NFbj3s/MG-6995.jpg
-// https://i.ibb.co/4jdj2cZ/MG-7120.jpg
-// https://i.ibb.co/XYHm4zM/about-Hotel-Header.jpg
-// https://i.ibb.co/gFCG222/Swimming-Pool.jpg
-// https://i.ibb.co/0Mn5hGG/MG-7148.jpg
 const AboutUs = () => {
     return (
         
@@ -14,17 +9,17 @@ const AboutUs = () => {
             <Header></Header>
 
             <div className="about-title">
-                <h2 className="pt-5 text-2xl md:text-5xl text-white">About BeachFront</h2>
+                <h2 className="pt-5 text-2xl md:text-5xl text-white">About X-Drone</h2>
 
             </div>
             <div className="grid justify-items-center">
                 <div className="p-5 md:w-8/12 md:p-10">
-                    <h2 className="text-2xl p-5">Welcome and Relax…in the BeachFront Resort</h2>
-                    <p className=" text-lg">Encompassing the spectacular views of Cox’s Bazar, BeachFront Resort stands very close to the hills and sea-beach, offering world class facilities and exhilarating experience to its guests. Whether you are planning a great vacation, the sweetest of honeymoons or a cozy business tour, you would prefer our beach hotel for your relaxing stay. Imagine that the 120 km astonishing longest beach in the world is just five-minute walk away from your room, providing an exuberant sensation in your mind and filling your heart with magnificent joy. Starting from Cox’s Bazar’s longest beach view to the comforts which you would be looking for are all here, making BeachFront Resort the perfect choice for business, romance and holiday travel. Make your every move easy in Cox’s Bazar by staying with us.</p>
+                    <h2 className="text-2xl p-5">#1 Store for Drone in Bangladesh</h2>
+                    <p className=" text-lg">X-Dron specializes in the supply of high-end drones for a variety of commercial, private, and recreational needs. We’re able to deliver the highest quality drones at the highest quality service. Whether you require drones for aerial filming, videography, surveying, or anything else, we have the drones available to suit your needs. With an extensive product range as well as custom drone solutions available, we can help you choose the perfect product or our engineers can design one specifically for you! It’s all this and so much more that we are a leading name in the ever-growing drone industry, renowned as pioneers for our unique drones. Drone Nerds is also the largest distributor of drones in the US, boasting the largest inventory of drones in the nation.</p>
                 </div>
             </div>
             <div>
-                <img className="w-full" src="https://i.ibb.co/9NFbj3s/MG-6995.jpg" alt="" />
+                <img className="w-full" src="https://i.ibb.co/GWLBqZc/drone.png" alt="" />
             </div>
         </div>
     );

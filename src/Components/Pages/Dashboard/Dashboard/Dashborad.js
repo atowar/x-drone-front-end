@@ -43,7 +43,7 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <Link to='/home'> <Button color="inherit">Home</Button></Link>
+                <Link to='/home'> <Button color="inherit">Shop</Button></Link>
                 <Link to={`${url}`}> <Button color="inherit">Dashboard</Button></Link>
                 <Link to={`${url}/my-order`}> <Button color="inherit">My Order</Button></Link>
                 <Link to={`${url}/review`}> <Button color="inherit">Review</Button></Link>
@@ -54,6 +54,7 @@ function Dashboard(props) {
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                     <Link to={`${url}/makeadmin`}> <Button color="inherit">Manage Admin</Button></Link>
                     <Link to={`${url}/manage-orders`}> <Button color="inherit">Manage Orders</Button></Link>
+                    <Link to={`${url}/manage-products`}> <Button color="inherit">Manage Products</Button></Link>
                 </Box>
             }
             {user &&
@@ -150,6 +151,9 @@ function Dashboard(props) {
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
                     <AdminRoute path={`${path}/manage-orders`}>
+                        <ManageOrder></ManageOrder>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manage-products`}>
                         <ManageOrder></ManageOrder>
                     </AdminRoute>
                 </Switch>

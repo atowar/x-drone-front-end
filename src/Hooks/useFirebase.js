@@ -36,7 +36,7 @@ const useFirebase = () => {
 
                 });
 
-                history.replace('/')
+                history.replace('/dashboard')
             })
             .catch((error) => {
 
@@ -52,7 +52,7 @@ const useFirebase = () => {
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const destination = location?.state?.from || '/'
+                const destination = location?.state?.from || '/dashboard'
                 history.replace(destination)
 
                 setAuthError('')
@@ -74,7 +74,7 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
-                const destination = location?.state?.from || '/'
+                const destination = location?.state?.from || '/dashboard'
                 history.replace(destination)
                 saveUserToDb(user.email, user.displayName, 'PUT')
                 setAuthError('')

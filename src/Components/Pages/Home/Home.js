@@ -20,8 +20,7 @@ const Home = () => {
             <CameraFeatures></CameraFeatures>
             <Products></Products>
             <AboutSection></AboutSection>
- 
-            <Reviews></Reviews>
+             <Reviews></Reviews>
             <FooterTop></FooterTop>
         </div>
     );
